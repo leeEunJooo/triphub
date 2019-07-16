@@ -85,8 +85,8 @@ WSGI_APPLICATION = 'TriphubProject.wsgi.application'
 #         'PORT': '5432',
 #     }
 # }
-# import pymysql
-# pymysql.install_as_MySQLdb()
+import pymysql
+pymysql.install_as_MySQLdb()
 
 # DATABASES = {
 #     'default': {
