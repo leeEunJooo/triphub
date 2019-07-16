@@ -85,12 +85,15 @@ WSGI_APPLICATION = 'TriphubProject.wsgi.application'
 #         'PORT': '5432',
 #     }
 # }
+import pymysql
+pymysql.install_as_MySQLdb()
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'TriphubProject',
-        'USER': 'commonuser',
-        'PASSWORD': 'asd489456+',
+        'NAME': 'new_schema',
+        'USER': 'root',
+        'PASSWORD': '1q2w3e4r!',
         'HOST': 'localhost',
         'PORT': '3306',
     }
