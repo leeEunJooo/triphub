@@ -85,20 +85,36 @@ WSGI_APPLICATION = 'TriphubProject.wsgi.application'
 #         'PORT': '5432',
 #     }
 # }
-import pymysql
-pymysql.install_as_MySQLdb()
+# import pymysql
+# pymysql.install_as_MySQLdb()
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'new_schema',
+#         'USER': 'root',
+#         'PASSWORD': '1q2w3e4r!',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
+
 
 DATABASES = {
     'default': {
+<<<<<<< HEAD
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'triphub',
         'USER': 'root',
         'PASSWORD': 'asd489456+',
         'HOST': 'localhost',
         'PORT': '3306',
+=======
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+>>>>>>> 7e07182c8fb91100ba546d18fb8d6c12d6fd0297
     }
 }
-
 
 
 # Password validation
