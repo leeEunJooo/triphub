@@ -102,17 +102,12 @@ WSGI_APPLICATION = 'TriphubProject.wsgi.application'
 
 DATABASES = {
     'default': {
-<<<<<<< HEAD
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'triphub',
         'USER': 'root',
         'PASSWORD': 'asd489456+',
         'HOST': 'localhost',
         'PORT': '3306',
-=======
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
->>>>>>> 7e07182c8fb91100ba546d18fb8d6c12d6fd0297
     }
 }
 
