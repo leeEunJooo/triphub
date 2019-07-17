@@ -106,7 +106,7 @@ DATABASES = {
         'NAME': 'triphub',
         'USER': 'root',
         'PASSWORD': 'asd489456+',
-        'HOST': 'localhost',
+        'HOST': '192.168.0.5',
         'PORT': '3306',
     }
 }
