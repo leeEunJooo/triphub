@@ -1,8 +1,6 @@
 from .forms import RegisterForm
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.models import User
-from django.contrib.auth.hashers import check_password
-from django.contrib.auth import get_user_model
 from django.contrib import auth
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
@@ -34,9 +32,9 @@ def register(request):
 
             mail_subject = "[TripHub] 회원가입 인증 메일입니다."
 
-            if request.method == 'POST':
-                user_email = request.POST['email']
-
+            # if request.method == 'POST':
+            #     user_email = request.POST['email']
+            user_email = user.email
             email = EmailMessage(mail_subject, message, to=[user_email])
             email.send()
             return HttpResponse(
