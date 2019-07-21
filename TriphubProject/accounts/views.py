@@ -52,10 +52,6 @@ def register(request):
 
     return render(request, 'registration/register.html',{'form':user_form})
 
-<<<<<<< HEAD
-# def room(request):
-
-=======
 # def register(request):
 #     if request.method == 'POST':
 #         user_form = RegisterForm(request.POST)
@@ -106,4 +102,3 @@ def activate(request, uid64, token):
 #             new_user.save()   
     
 #             return render(request, 'registration/register_done.html', {'new_user':new_user})
->>>>>>> 832ef67520455e4cffd7bbf5391ece9f9bc0bca7
