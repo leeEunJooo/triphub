@@ -2,7 +2,6 @@ from django.contrib.auth.models import User
 from django import forms
 from django.contrib.auth import get_user_model
 
-
 class RegisterForm(forms.ModelForm):
     password = forms.CharField(label = 'password' , widget = forms.PasswordInput)
     password2 = forms.CharField(label = 'Repeat_password' , widget = forms.PasswordInput)

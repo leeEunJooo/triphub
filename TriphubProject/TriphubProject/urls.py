@@ -7,5 +7,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('TripHubApp.urls')),
     path('accounts/', include('accounts.urls')),
- 
+    path('Rooms/', include('Rooms.urls')),
 ]
