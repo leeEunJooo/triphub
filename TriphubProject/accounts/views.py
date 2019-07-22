@@ -21,7 +21,8 @@ def register(request):
             user.save()
             current_site = get_current_site(request) 
             # localhost:8000
-            message = render_to_string('registration/user_activate_email.html',                         {
+            message = render_to_string('registration/user_activate_email.html',
+            {
                 'user': user,
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
