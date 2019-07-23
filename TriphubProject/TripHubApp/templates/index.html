@@ -34,6 +34,7 @@
             align-self: center;
             transform-style: preserve-3d;
         }
+        /*
         input {
             font-size: 16px;
             border: 0;
@@ -42,6 +43,7 @@
             padding: 10px 15px;
             margin-top: 15px;
         }
+        */
 
         #Login_sign{
             margin: 0;
@@ -97,11 +99,14 @@
 
         }
         */
-        #Lost{
+        #info{
+            text-decoration: none;
             color: #fff;
-            font-size: 15px;
+            font-size: 30px;
+            font-weight: bold;
             text-align: center;
-            padding: 20px 15px;
+            padding: 0px 15px;
+            padding-bottom: 10px;
             margin-bottom: -15px;
         }
         @keyframes lookaway-up {
@@ -201,6 +206,7 @@
                 <circle cx="84" cy="52" r="1" fill="#fff"/>
             </g>
 
+
             <!-- mouse -->
             <g class="muzzle">
                 <path d="M60,66 C58.5,61 49,63 49,69 C49,75 58,77 60,71 M60,66 C61.5,61 71,63 71,69 C71,75 62,77 60,71" fill="#fff" />
@@ -211,10 +217,10 @@
             </g>
         </svg>
         <!-- <input type="submit" value="Login"> -->
+        <a href="{% url 'info' %}" id="info">&copy; Triphub</a>
         <ul id="Login_sign">
             <li><a href="{% url 'login'%}" id="Login_button">로그인</a></li>
         </ul>
-        <a href="1.html" id="Lost">비밀번호를 잊어버리셨나요?</a>
     </form>
     <script>
             (function(){

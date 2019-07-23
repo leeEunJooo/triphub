@@ -7,6 +7,7 @@ from . import views
 urlpatterns = [
     path('',views.index, name="index"),
     path('main',views.main, name="main"),
+    path('info',views.info, name="info"),
     path('createroom',views.createroom, name="createroom"),
     # 패스를 추가해줬다고 무조건 html을 띄워야 하는 건 아님.
     # path('어떤 url이 들어오면', (어디에있는)어떤 함수를 실행시켜라)

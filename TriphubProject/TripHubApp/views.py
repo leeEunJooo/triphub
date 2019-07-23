@@ -28,3 +28,6 @@ def createroom(request):    #입력받은 내용을 데이터베이스에 넣어
 
 # def myroom(request):  #입력받은 내용을 화면에 띄워주는 함수.
 #     return render(request,'main.html')
+
+def info(request):
+    return render(request,'info.html')

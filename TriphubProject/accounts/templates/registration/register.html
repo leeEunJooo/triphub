@@ -16,7 +16,7 @@
         }
         form {
             width: 320px;
-            padding: 60px 25px 80px;
+            padding: 60px 25px 40px;
             margin: 50px auto;
             background: #4776E6;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to left, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
@@ -40,6 +40,20 @@
             outline: 0;
             padding: 10px 15px;
             margin-top: 15px;
+        }
+
+        label,span {
+            display: none;
+        }
+        
+        #id_username, #id_password, #id_email, #id_password2 {
+            width: 290px;
+            font-size: 16px;
+            border: 0;
+            border-radius: 5px;
+            outline: 0;
+            padding: 10px 15px;
+            margin-top: 0px;
         }
 
         #Login_sign{
@@ -206,7 +220,6 @@
         <ul id="Login_sign">
             <li><input id="Sign" type="submit" value="회원가입"></li>
         </ul>
-        <a href="1.html" id="Lost">비밀번호를 잊어버리셨나요?</a>
     </form>
     <script>
             (function(){
@@ -317,6 +330,19 @@
             $('#Sign').mouseleave(function(){
                 $(this).css({'background-color':'#fff','transition': '0.21s ease-in'});
             }); 
+        });
+
+        $(document).ready(function(){
+            $('#id_username').attr('placeholder','ID');
+        });
+        $(document).ready(function(){
+            $('#id_password').attr('placeholder','Password');
+        });
+        $(document).ready(function(){
+            $('#id_email').attr('placeholder','인증을 위한 Email');
+        });
+        $(document).ready(function(){
+            $('#id_password2').attr('placeholder','Confirm Password');
         });
     </script>
 </body>

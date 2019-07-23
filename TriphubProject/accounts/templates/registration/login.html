@@ -34,6 +34,7 @@
             align-self: center;
             transform-style: preserve-3d;
         }
+        
         input {
             font-size: 16px;
             border: 0;
@@ -41,6 +42,19 @@
             outline: 0;
             padding: 10px 15px;
             margin-top: 15px;
+        }
+        label {
+            display: none;
+        }
+        
+        #id_username, #id_password {
+            width: 290px;
+            font-size: 16px;
+            border: 0;
+            border-radius: 5px;
+            outline: 0;
+            padding: 10px 15px;
+            margin-top: 1px;
         }
 
         #Login_sign{
@@ -339,6 +353,12 @@
                 $(this).css({'width':'160px','background-color':'#fff','transition': '0.21s ease-in'});
                 $('#Sign').css({'width':'120px','background-color':'#fff','transition': '0.21s ease-in'});
             });
+        });
+        $(document).ready(function(){
+            $('#id_username').attr('placeholder','ID');
+        });
+        $(document).ready(function(){
+            $('#id_password').attr('placeholder','Password');
         });
     </script>
 </body>
