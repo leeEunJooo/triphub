@@ -10,23 +10,114 @@
             padding-left: 10px;
         }
         .section_child{
-            border: rgb(120, 173, 204) 3px solid;
+            border: rgb(58, 64, 83) 3px solid;
             border-radius: 50px;
+            background-color: rgb(58, 64, 83);
             padding: 30px;
             display: inline-block;
-            margin: 8px auto;
+            margin: 8px 2px;
             width: 44.3%;
             height: 87%;
         }
+        .room-card{
+            float: left;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 8px 14px;
+            width: 260px;
+            height: 200px;
+        }
+        .rc-head{
+            margin: 0px;
+            padding: 0px;
+            height: 80px;
+            position: relative;
+            background: linear-gradient(to left, #8E54E9, #4776E6);
+            border-radius: 25px 25px 0 0;
+        }
+        .rc-head>h2{
+            padding: 30px;
+            padding-left: 20px;
+            color: #fff;
+        }
+        .rc-contents{
+            background: #fff;
+            margin: 0px;
+            padding: 0px;
+            height: 80px;
+            position: relative;
+            border-radius: 0 0 25px 25px;
+        }
+        .rc-contents>p{
+            padding: 15px;
+            font-weight: 500;
+        }
+        /*
+        .card-container{
+            width: 280px;
+            height: 500px;
+            margin: 60px auto;
+            margin-left: 1000px;
+        }
+        .card-card{
+
+        }
+        .card-head{
+            position: relative;
+            height: 252px;
+            background: linear-gradient(to left, #8E54E9, #4776E6);
+            border-radius: 25px 25px 0 0;
+        }
+        */
     </style>
     <div class="section">
-        <div class="section_child">ddddddd</div>
+        <div class="section_child">
+            <div>
+
+            </div>
+        </div>
         <div class="section_child">
             <div class="room-card">
-                <form action="{%url 'createroom' %}" method="GET">
-                    <input class="createroom" name = "roomname" type="text">
-                    <input class="createroom" value="방 생성하기" type="submit">
-                </form>
+                <div class="rc-head">
+                    <h2>+</h2>
+                </div>
+                <div class="rc-contents">
+                    <form action="{%url 'createroom' %}" method="GET">
+                        <input class="createroom" name = "roomname" type="text">
+                        <input class="createroom" value="방 생성하기" type="submit">
+                    </form>
+                </div>
+                
+            </div>
+
+
+            <!-- <div class="card-container">
+                <div class="card-card">
+                    <div class="card-head">
+                        <div class="card-detail">
+                            <h2>Ha</h2>
+                            arararaar
+                            <span class="back-next">FAS</span>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="room-card">
+                <div class="rc-head">
+                    <h2>여행 계획1</h2>
+                </div>
+                <div class="rc-contents">
+                    <p>강원도-경기도-경상도</p>
+                </div>
+            </div>
+            <div class="room-card">
+                <div class="rc-head">
+                    <h2>여행 계획2</h2>
+                </div>
+                <div class="rc-contents">
+                    <p>강원도-경기도-경상도</p>
+                </div>
             </div>
             <!--for i in
             <div class="room-card">
