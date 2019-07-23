@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko_kr">
+<head>
+    <!-- meta tag -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+
+    <!-- css -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
+    <title>Triphub</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 600px;
+        }
+        #logout_btn{
+            border: #fff 2px solid;
+            text-decoration:none;
+            color:#fff;
+            border-radius:15px;
+            padding:5px;
+            font-size: 15px;
+            font-weight: bold;
+            box-shadow: 2px 3px 2px 2px rgb(88, 55, 110);
+        }
+        #logout_btn:hover{
+            transform: rotate(10deg);
+            transition: 0.3s ease-in;
+            box-shadow: 2px 3px 2px 2px rgb(88, 55, 110);
+        }
+        #menu_checkbox{
+            display: none;
+        }
+        label{
+            position:absolute;
+            top: 28px;
+            right: 0;
+            left: 10px;
+            width: 30px;
+            height: 30px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: 0.3s ease transform;
+        }
+        label div{
+            width: 6px;
+            height: 6px;
+            background-color: #fff;
+            margin-left: 0;
+            margin-bottom: 6px;
+            transition: 0.3s ease width, 0.3s ease margin-left, 0.3s ease margin-bottom, 0.3s ease background-color;
+            border-radius: 6px;
+        }
+        label div:first-child{
+            width: 22px;
+        }
+        label div:nth-child(2){
+            width: 15px;
+            
+        }
+        label div:last-child{
+            width: 30px;
+        }
+        #menu_checkbox:checked + label{
+            transform: translateY(-50%) rotateZ(-90deg);
+
+        }
+        #menu_checkbox:checked + label div{
+            width:6px;
+            margin-left: 12px;
+            margin-bottom: 3px;
+            background-color: #fff;
+        }
+        .navbar{
+            height: 55px;
+            background: #4776E6;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        .navbar-brand{
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            position: absolute;
+            top: 16px;
+            left: 60px;
+        }
+        #logout_btn {
+            position: absolute;
+            top: 9px;
+            right: 20px;
+        }
+        #username{
+            position: absolute;
+            color: #fff;
+            right: 100px;
+            top: 18px;
+            font-weight: 700;
+        }
+        .container{
+            margin: 50px auto;
+            width: 93%;
+            height: 100%;
+            border: rgb(120, 173, 204) 3px solid;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Image and text -->
+    <nav class="navbar">
+        <input type="checkbox" name="" id="menu_checkbox">
+        <label for="menu_checkbox">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <a class="navbar-brand" href="{% url 'main'%}">
+        Triphub
+        </a>
+        <p id='username'>{{user_name}}님 Halo!</p>
+        <a id='logout_btn' href="{% url 'logout' %}">로그아웃</a>
+    </nav>
+    <div class="container">
+        <!-- Content here -->
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+<!-- scripts -->
+<script>
+   
+</script>
+</html>

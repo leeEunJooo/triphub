@@ -154,7 +154,7 @@ STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static'), ]
 
 
 LOGIN_REDIRECT_URL = '/main'
-
+LOGOUT_REDIRECT_URL = '/accounts/login'
 
 EMAIL_HOST = 'smtp.gmail.com'
 # 메일을 호스트하는 서버

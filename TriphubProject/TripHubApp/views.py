@@ -10,7 +10,8 @@ def index(request):
     return render(request,'index.html' )
 
 def main(request):
-    return render(request,'main.html')
+    user_name = request.user.username
+    return render(request,'main.html',{'user_name':user_name})
 
 def createroom(request):    #입력받은 내용을 데이터베이스에 넣어주는 함수
     room = RoomInput()
@@ -31,3 +32,4 @@ def createroom(request):    #입력받은 내용을 데이터베이스에 넣어
 
 def info(request):
     return render(request,'info.html')
+

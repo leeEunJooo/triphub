@@ -22,10 +22,17 @@
     <div class="section">
         <div class="section_child">ddddddd</div>
         <div class="section_child">
-            <form action="{%url 'createroom' %}" method="GET">
-                <input class="createroom" name = "roomname" type="text">
-                <input class="createroom" value="방 생성하기" type="submit">
-            </form>
+            <div class="room-card">
+                <form action="{%url 'createroom' %}" method="GET">
+                    <input class="createroom" name = "roomname" type="text">
+                    <input class="createroom" value="방 생성하기" type="submit">
+                </form>
+            </div>
+            <!--for i in
+            <div class="room-card">
+                <h1>생성된 룸</h1>
+            </div>
+            -->
         </div>
     </div>
     
