@@ -18,7 +18,11 @@
             width: 320px;
             padding: 60px 25px 80px;
             margin: 50px auto;
-            background: #437cd2;
+            background: #4776E6;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            
             display: flex;
             flex-direction: column;
         }
@@ -42,21 +46,19 @@
         #Login_sign{
             margin: 0;
             padding: 0;
-
             list-style-type: none;
         }
 
-        #Sign, #Login_button{
-            width: 120px;
+        #Login_button{
+            width: 285px;
             font-size: 15px;
-            border: rgb(95, 134, 201) 2px solid;
             border-radius: 5px;
-            background-color: rgb(95, 134, 201);
+            background: #fff;
             outline: 0;
             padding: 10px 15px;
             margin-top: 15px;
             
-            color: #fff;
+            color: #000;
             text-decoration: none;
             font-weight: 700;
             text-align: center;
@@ -64,7 +66,7 @@
 
             float: left;
         }
-
+        /*
         #Sign{
             float: left;
         }
@@ -72,6 +74,7 @@
         #Login_button{
             float: right;
         }
+        */
         /*
         #Sign:hover{
             width: 60%;
@@ -174,7 +177,12 @@
     </style>
 </head>
 <body>
-    <form action="">
+
+    <!-- <input type="text" placeholder="ID" maxlength="30">
+    <input type="password" placeholder="Password" maxlength="40">
+    <a href = "{% url 'logout'%}">로그아웃</a> -->
+
+    <form action="" method="POST">
         <svg id="ddugi" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,150 C0,65 120,65 120,150" fill="rgb(81, 151, 181)" stroke="#000" stroke-width="2.5" />
             <!-- structure -->
@@ -202,12 +210,8 @@
                 
             </g>
         </svg>
-        <input type="text" placeholder="ID" maxlength="30">
-        <input type="password" placeholder="Password" maxlength="40">
-        <!-- <a href = "{% url 'logout'%}">로그아웃</a> -->
-        
+        <!-- <input type="submit" value="Login"> -->
         <ul id="Login_sign">
-            <li><a href="{% url 'register'%}" id="Sign">회원가입</a></li>
             <li><a href="{% url 'login'%}" id="Login_button">로그인</a></li>
         </ul>
         <a href="1.html" id="Lost">비밀번호를 잊어버리셨나요?</a>
@@ -315,21 +319,13 @@
     </script>
     <script>
         $(document).ready(function(){
-            $('#Sign').mouseenter(function(){
-                $(this).css({'width':'55%','background-color':'rgb(57, 91, 152)','transition': '0.21s ease-in'});
-                $('#Login_button').css({'width':'23%','background-color':'rgb(95, 134, 201)','transition': '0.21s ease-in'});
-            });
             $('#Login_button').mouseenter(function(){
-                $(this).css({'width':'55%','background-color':'rgb(57, 91, 152)','transition': '0.21s ease-in'});
-                $('#Sign').css({'width':'23%','background-color':'rgb(95, 134, 201)','transition': '0.21s ease-in'});
-            });
-            $('#Sign').mouseleave(function(){
-                $(this).css({'width':'120px','background-color':'rgb(95, 134, 201)','transition': '0.21s ease-in'});
-                $('#Login_button').css({'width':'120px','background-color':'rgb(95, 134, 201)','transition': '0.21s ease-in'});
+                $(this).css({'background-color':'rgb(185, 211, 245)','transition': '0.21s ease-in'});
+                $('#Sign').css({'background-color':'#fff','transition': '0.21s ease-in'});
             });
             $('#Login_button').mouseleave(function(){
-                $(this).css({'width':'120px','background-color':'rgb(95, 134, 201)','transition': '0.21s ease-in'});
-                $('#Sign').css({'width':'120px','background-color':'rgb(95, 134, 201)','transition': '0.21s ease-in'});
+                $(this).css({'background-color':'#fff','transition': '0.21s ease-in'});
+                $('#Sign').css({'background-color':'#fff','transition': '0.21s ease-in'});
             });
         });
     </script>

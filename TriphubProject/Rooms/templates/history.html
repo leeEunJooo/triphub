@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+{% extends 'base.html' %}
     <style>
         #search{
             border:solid 1px #000;
@@ -29,9 +23,7 @@
             padding:0.5%;
         }
     </style>
-</head>
-    <body>
-        
+{% block contents %}
             <ul>
                 <li>초대하고싶은 친구의 닉네임을 입력하세요</li>
                 {{username}}
@@ -60,5 +52,4 @@
             document.getElementById("inviteList2").value = '';
         }
         </script>
-    </body>
-</html>
+{% endblock%}  
