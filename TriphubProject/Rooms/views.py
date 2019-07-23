@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from TripHubApp.models import myRoom
 from TripHubApp.models import RoomInput
-
+import pymysql.cursors
 # from .models import Room
 
 def history(request):
@@ -11,10 +11,13 @@ def history(request):
 
 def invite_all(request):
     myroom = myRoom()
-    newlist = request.GET.get('invitelist')
+    users = User()
+    newlist = request.GET.get('friends')
    
-    # friends = inviteList.split('&')
-
+    friends = newlist.split('&')
+    for obj in users.objects.all().filter(classname__contains=username):
+        for i in range(0, len(friends)-1):
+            
     # for i in range(0,len(friends)):
     #     # queryset = queryset[:1]
     #     # queryset.
@@ -22,4 +25,4 @@ def invite_all(request):
 
     # myroom.save()
     # myroom = myRoom()
-    return render(request,'history.html',{'names':newlist})
+    return render(request,'history.html',{'name':friends})

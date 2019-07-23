@@ -12,5 +12,4 @@ urlpatterns = [
     path('register/', register, name="register"),
     path('activate/<slug:uid64>/<slug:token>/', activate, name ="activate"), 
     # path('login_done', login_done, name = "login_done"),
-
 ]

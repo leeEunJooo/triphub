@@ -41,24 +41,34 @@
                 </li>
                 <form action="{%url 'invite_all' %}" method="GET">
                 <li>초대하는 친구 리스트</li>
-                <li><input id = "inviteList" type="text" disabled></li>
-                <li><input id = "inviteList2" type="text" name="invitelist" value="sd"disabled></li>
-                <li><input class = "invite" type="submit" value="초대하기"> <input onclick ='del()' class = "delete" type="button" value="모두 삭제"></li>
+                <li><input id = "inviteList" type="text"></li>
+                <li><input id = "inviteList2" type="text" name="friends"></li>
+                <li>
+                    <input onclick ='show()'class = "invite" type="submit" value="초대하기">
+                    <input onclick ='del()' class = "delete" type="button" value="모두 삭제">
+                </li>
             </form>
             </ul>
-        {{names}}
+        {{name}}
 
         <script>
+            function show(){
+                var a = document.getElementById("inviteList2").value;
+                console.log(a);
+            }
         function input_Text(){
             var x = document.getElementById("search").value;
-            console.log(x);
+            // console.log(x);
+            var a = document.getElementById("inviteList2").value;
+                console.log(a);
             document.getElementById("inviteList").value  +=  (' '+x);
-            document.getElementById("inviteList2").value  +=  ('&'+x);
+            document.getElementById("inviteList2").value  +=  (x + '&');
         }
-        function del(){ 
+        function del(){
             document.getElementById("inviteList").value = '';
             document.getElementById("inviteList2").value = '';
         }
         </script>
+
     </body>
 </html>
