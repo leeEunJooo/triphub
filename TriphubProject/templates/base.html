@@ -10,15 +10,35 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Triphub</title>
+    <style>
+        #logout_btn{
+            border: #fff 2px solid;
+            text-decoration:none;
+            color:#fff;
+            border-radius:15px;
+            padding:5px;
+            font-size: 15px;
+            font-weight: bold;
+            box-shadow: 2px 3px 2px 2px rgb(88, 55, 110);
+        }
+        #logout_btn:hover{
+            transform: rotate(10deg);
+            transition: 0.3s ease-in;
+            box-shadow: 2px 3px 2px 2px rgb(88, 55, 110);
+        }
+    </style>
 </head>
 <body>
     <!-- Image and text -->
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">
+    <nav class="navbar navbar-dark bg-dark" style="background: #4776E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    ">
+        <a class="navbar-brand" href="{% url 'main'%}">
         <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
         Triphub
         </a>
-        <a href="/" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true" style="width: 80px; height:30px; font-size:13px; text-align:center; font-weight:bold; padding-bottom:25px;">로그아웃</a>
+        <a id='logout_btn' href="{% url 'logout' %}">로그아웃</a>
     </nav>
     <br>
     <br>

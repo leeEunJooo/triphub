@@ -1,8 +1,6 @@
 from .forms import RegisterForm
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.models import User
-from django.contrib.auth.hashers import check_password
-from django.contrib.auth import get_user_model
 from django.contrib import auth
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
@@ -23,7 +21,8 @@ def register(request):
             user.save()
             current_site = get_current_site(request) 
             # localhost:8000
-            message = render_to_string('registration/user_activate_email.html',                         {
+            message = render_to_string('registration/user_activate_email.html',
+            {
                 'user': user,
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode(),
@@ -34,9 +33,9 @@ def register(request):
 
             mail_subject = "[TripHub] 회원가입 인증 메일입니다."
 
-            if request.method == 'POST':
-                user_email = request.POST['email']
-
+            # if request.method == 'POST':
+            #     user_email = request.POST['email']
+            user_email = user.email
             email = EmailMessage(mail_subject, message, to=[user_email])
             email.send()
             return HttpResponse(
