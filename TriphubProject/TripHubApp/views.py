@@ -3,14 +3,12 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from .models import RoomInput   #데이터베이스 틀 임포트
 from .models import myRoom   #데이터베이스 틀 임포트
+from django.contrib.auth.decorators import login_required
 
 def index(request):
 
     # triphub = TripHub
     return render(request,'index.html' )
-
-def main(request):
-    return render(request,'main.html')
 
 def createroom(request):    #입력받은 내용을 데이터베이스에 넣어주는 함수
     room = RoomInput()
@@ -25,6 +23,15 @@ def createroom(request):    #입력받은 내용을 데이터베이스에 넣어
     myroom.name = room.mainmember
     myroom.save()
     return redirect('Rooms/invite_member')
-
+    
 # def myroom(request):  #입력받은 내용을 화면에 띄워주는 함수.
 #     return render(request,'main.html')
+
+def info(request):
+    return render(request,'info.html')
+
+@login_required
+def main(request):
+    user_name = request.user.username
+    user_name += '님 Halo!'
+    return render(request,'main.html',{'user_name':user_name})
