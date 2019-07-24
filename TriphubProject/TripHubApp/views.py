@@ -5,6 +5,13 @@ from .models import RoomInput   #데이터베이스 틀 임포트
 from .models import myRoom   #데이터베이스 틀 임포트
 from django.contrib.auth.decorators import login_required
 
+
+@login_required
+def main(request):
+    user_name = request.user.username
+    user_name += '님 Halo!'
+    return render(request,'main.html',{'user_name':user_name})
+    
 def index(request):
 
     # triphub = TripHub
@@ -30,8 +37,3 @@ def createroom(request):    #입력받은 내용을 데이터베이스에 넣어
 def info(request):
     return render(request,'info.html')
 
-@login_required
-def main(request):
-    user_name = request.user.username
-    user_name += '님 Halo!'
-    return render(request,'main.html',{'user_name':user_name})
