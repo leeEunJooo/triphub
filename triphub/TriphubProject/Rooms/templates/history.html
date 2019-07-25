@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block contents %}
+    <style>
+        #search{
+            border:solid 1px #000;
+            font-size: 15px;
+            padding:0.5%;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            margin-bottom: 1%;
+        }
+        .searchbtn, .invite, .delete{
+            padding:3%;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+        #inviteList, #inviteList2{
+            border:none;
+            border-bottom:solid 1px #000;
+            font-size: 15px;
+            padding:0.5%;
+        }
+    </style>
+            <ul>
+                <li>초대하고싶은 친구의 닉네임을 입력하세요</li>
+                {{username}}
+                <li>
+                    <input id = "search" type="search" onfocus="this.value=''">
+                    <input onclick ='input_Text()' class="searchbtn" type="button" value="검색">
+                </li>
+                <form action="{%url 'invite_all' %}" method="GET">
+                <li>초대하는 친구 리스트</li>
+                <li><input id = "inviteList" type="text"></li>
+                <li><input id = "inviteList2" type="text" name="friends"></li>
+                <li>
+                    <input onclick ='show()'class = "invite" type="submit" value="초대하기">
+                    <input onclick ='del()' class = "delete" type="button" value="모두 삭제">
+                </li>
+            </form>
+            </ul>
+        {{name}}
+
+        <script>
+            function show(){
+                var a = document.getElementById("inviteList2").value;
+                console.log(a);
+            }
+        function input_Text(){
+            var x = document.getElementById("search").value;
+            // console.log(x);
+            var a = document.getElementById("inviteList2").value;
+                console.log(a);
+            document.getElementById("inviteList").value  +=  (' '+x);
+            document.getElementById("inviteList2").value  +=  (x + '&');
+        }
+        function del(){
+            document.getElementById("inviteList").value = '';
+            document.getElementById("inviteList2").value = '';
+        }
+        </script>
+{% endblock%}  
