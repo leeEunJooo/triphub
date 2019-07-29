@@ -1,5 +1,6 @@
 from django.contrib import admin
 
-# from .models import TripHub
-# admin.site.register(TripHub)
+from .models import RoomInput,myRoom
+admin.site.register(RoomInput)
+admin.site.register(myRoom)
 # Register your models here.
