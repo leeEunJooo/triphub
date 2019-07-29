@@ -20,7 +20,6 @@ def main(request):
 
 
 def index(request):
-
     # triphub = TripHub
     return render(request, "index.html")
 
