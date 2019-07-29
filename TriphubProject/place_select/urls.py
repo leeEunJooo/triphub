@@ -1,6 +1,6 @@
 # place_select urls.py
 from django.urls import path
-from place_select.views import place_select ,attraction ,attraction2, next_select_page 
+from .views import place_select ,attraction ,attraction2, next_select_page 
 
 urlpatterns = [
     path('place_select/' , place_select , name = "place_select"),

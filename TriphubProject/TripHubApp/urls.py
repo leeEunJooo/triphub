@@ -3,6 +3,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from place_select import views as views_place
 
 # django + react api 연동
 # from rest_framework import routers

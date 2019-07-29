@@ -1,11 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render 
 import requests
 from bs4 import BeautifulSoup as bs
 
 # Create your views here.
 
 def place_select(request):
-    return render(request , 'place_select.html')
+
+    return render(request ,'place_select.html')
+    
 
 
 def attraction(request):
