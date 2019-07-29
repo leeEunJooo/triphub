@@ -72,7 +72,8 @@ def main(request):
     room_roomname = []
     room_mainmember = []
     room_info = []
-    user_room = user_room[1:]
+    if len(user_room)!= 0:
+        user_room = user_room[1:]
     qs = RoomInput.objects.all() #유저 정보 모두 가지고 오기
     cnt = 0
     
