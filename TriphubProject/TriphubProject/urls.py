@@ -9,4 +9,5 @@ urlpatterns = [
     path('', include('TripHubApp.urls')),
     path('accounts/', include('accounts.urls')),
     path('Rooms/', include('Rooms.urls')),
+    path('select/', include('place_select.urls')),
 ]

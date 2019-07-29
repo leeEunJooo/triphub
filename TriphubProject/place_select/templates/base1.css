@@ -1,0 +1,65 @@
+.top__{
+    width : 1388px;
+    height : 60px;
+    border : solid black 2px;
+    margin : 40px;
+
+}
+.trip_space{
+    width : 700px ;
+    height : 500px;
+    border : solid black 2px;
+    margin : 0 40px;
+    float: left;
+    border-radius: 30px;
+
+}
+
+
+.select_box{
+    width : 300px;
+    height : 480px;
+    border : solid black 2px;
+    padding-top : 20px;
+    float: left;
+    border-radius: 30px;
+
+}
+
+.chatting{
+    width : 300px;
+    height : 350px;
+    border : solid black 2px;
+    margin : 0 40px;
+    float: left;
+    border-radius: 30px;
+
+    
+}
+
+
+
+.weather{
+    width : 300px;
+    height : 130px;
+    border : solid black 2px;
+    margin : 16px 40px;
+    float: left;
+    border-radius: 30px;
+
+    
+}
+
+
+.selectttt_boxx{
+
+    width : 230px;
+    height : 60px;
+    text-align: center;
+    border : solid black 2px;
+    margin : 2px 30px;
+    border-radius: 25px;
+
+
+}
+
