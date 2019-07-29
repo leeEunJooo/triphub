@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'TripHubApp',
     'accounts',
     'Rooms',
+    'Members',
 ]
 
 MIDDLEWARE = [
