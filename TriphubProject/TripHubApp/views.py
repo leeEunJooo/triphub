@@ -76,13 +76,14 @@ def main(request):
         user_room = user_room[1:]
     qs = RoomInput.objects.all() #유저 정보 모두 가지고 오기
     cnt = 0
-    
+    info = []
     for i in user_room:
         rows = qs.filter(id__icontains=i)
         for row in rows:
-            room_id.append(row.id)
-            room_date.append(row.date)
-            room_roomname.append(row.roomname)
-            room_mainmember.append(row.mainmember)
+            info.append(row)
+            # room_id.append(row.id)
+            # room_date.append(row.date)
+            # room_roomname.append(row.roomname)
+            # room_mainmember.append(row.mainmember)
             # room_info.append(a)
-    return render(request,'main.html', {'size':len(room_id), 'room_id' : room_id, 'room_date': room_date, 'room_roomname': room_roomname, 'room_mainmember': room_mainmember})
+    return render(request,'main.html', {'infos':info})

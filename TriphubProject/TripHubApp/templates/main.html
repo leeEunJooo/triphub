@@ -153,19 +153,20 @@
             </div>
             -->
         
-            {%for i in room_roomname%}
+            {% for info in infos %}
            <a href="{% url 'place_select' %}">
               <div class="room-card">
                 <div class="rc-head">
-                    <h2>방 이름{{room_roomname}</h2>
+                    <h2>{{info.roomname }}</h2>
                 </div>
                 <div class="rc-contents">
-                    <p>{{room_mainmembe}}</p>
-                    <p>{{room_date}}</p>
+                    <p>{{info.date}}<br>
+                        {{info.mainmember}}</p>
+                    <!-- <p></p> -->
                 </div>
               </div>
             </a>
-            {%endfor%}
+            {% endfor %}
 
             
         </div>
