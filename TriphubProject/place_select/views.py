@@ -2,6 +2,9 @@ from django.shortcuts import render
 import requests
 from bs4 import BeautifulSoup as bs
 
+from django.http.response import JsonResponse
+
+
 # Create your views here.
 
 def place_select(request):
@@ -11,7 +14,7 @@ def place_select(request):
 
 
 def attraction(request):
-    attraction_get = []
+
     total = {}
     if request.method == 'GET':
         pick = request.GET['select_place']
@@ -66,7 +69,7 @@ def next_select_page(request):
 
 
 def attraction2(request):
-    attraction_get = []
+
     total = {}
 
     if request.method == 'GET':
@@ -138,3 +141,25 @@ def attraction2(request):
 
                                 
     return render(request , 'next_select/' + area + '.html' , {'attraction' : total , 'value' : area})
+
+
+
+
+
+
+def map_marker(request):
+    if request.method =='GET':
+        pick = request.GET['pick']
+        
+        req_address= requests.get("https://m.search.naver.com/search.naver?sm=mtp_hty.top&where=m&query="+pick)
+        html = req_address.text
+        soup = bs(html, 'html.parser')
+        
+        this_address2 = soup.findAll('span' , {"class" : "addr"})
+        for this_address in this_address2:
+            this_address = this_address.text
+
+    return render(request, 'place_select.html' , {"this_address": this_address})    
+    # return JsonResponse({'success':False, "this_address": this_address})
+
+        

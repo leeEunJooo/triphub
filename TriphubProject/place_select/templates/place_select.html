@@ -202,16 +202,23 @@
     <br>
     <br>
 
-
-    <div class="card_section">
-        {%for k,v in attraction.items %}
-            <div class="card"> <h3> {{k}} </h3> <br> {{v}}</div>
-        {%endfor%}
-    </div>
-
-   
+    <form action = {% url 'map_marker' %} method="GET">
+        <div class="card_section">
+            
+            {%for k,v in attraction.items %}
+                <div class="card"> 
+                    <h3> {{k}} </h3>
+                    <br> {{v}}
+                </div>
+                <input type="text" value="{{k}}" name ="pick" style="display: none" >
+                <input type="submit" value ="위치확인">
+                
+            {%endfor%}
+        </div>
+    </form>
 
 </section>
+{{this_address}}
 
 
 
