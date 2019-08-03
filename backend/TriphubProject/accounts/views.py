@@ -9,7 +9,7 @@ from django.utils.encoding import force_bytes
 from django.core.mail import EmailMessage
 from .tokens import account_activation_token
 from django.utils.encoding import force_bytes, force_text
-
+from Members.models import memberList
 def register(request):
     if request.method == 'POST':
         user_form = RegisterForm(request.POST)
@@ -19,6 +19,10 @@ def register(request):
             user.is_active = False
             # False로 설정해놓으면 이메일 인증전까지 회원활성화가 안됨!
             user.save()
+            # 멤버리스트에 저장
+            member = memberList()
+            member.user_id = user.username
+            member.save()
             current_site = get_current_site(request) 
             # localhost:8000
             message = render_to_string('registration/user_activate_email.html',

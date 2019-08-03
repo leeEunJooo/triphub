@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block contents %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
         .createroom{
             font-size: 10px;
@@ -8,6 +9,7 @@
             width: 100%;
             height: 100%;
             padding-left: 10px;
+            
         }
         .section_child{
             border: rgb(58, 64, 83) 3px solid;
@@ -18,6 +20,7 @@
             margin: 8px 2px;
             width: 44.3%;
             height: 87%;
+            overflow: auto;
         }
         .room-card{
             float: left;
@@ -70,6 +73,29 @@
         }
         */
     </style>
+    <!-- <script>
+            window.onload = function(){
+                console.log('s');
+                var $div = $('<div class="room-card"></div>');
+                var $div1 = $('<div class="rc-head"></div>');
+                var $div2 = $('<div class="rc-contents"></div>');
+                var $h2 = $('<h2 class="title"></h2>');
+                var $p = $('<p class="route"></p>');
+
+
+                $('#section').append($div);
+                $('.room-card').append($div1);
+                $('.room-card').append($div2);
+
+                $('.rc-head').append($h2);
+                $('.rc-contents').append($p);
+
+                document.getElementsByClassName('title').innerHTML = "dd";
+                document.getElementsByClassName('route').innerHTML = "sddsad";
+
+            }
+        </script> -->
+
     <div class="section">
         <div class="section_child">
             <div>
@@ -77,18 +103,18 @@
             </div>
         </div>
         <div class="section_child">
-            <div class="room-card">
-                <div class="rc-head">
-                    <h2>+</h2>
-                </div>
-                <div class="rc-contents">
-                    <form action="{%url 'createroom' %}" method="GET">
-                        <input class="createroom" name = "roomname" type="text">
-                        <input class="createroom" value="방 생성하기" type="submit">
-                    </form>
-                </div>
-                
+           
+        <div class="room-card">
+            <div class="rc-head">
+                <h2>+</h2>
             </div>
+            <div class="rc-contents">
+                <form action="{%url 'createroom' %}" method="GET">
+                    <input class="createroom" name = "roomname" type="text">
+                    <input class="createroom" value="방 생성하기" type="submit">
+                </form>
+            </div>
+        </div>
 
 
             <!-- <div class="card-container">
@@ -111,6 +137,7 @@
                     <p>강원도-경기도-경상도</p>
                 </div>
             </div>
+
             <div class="room-card">
                 <div class="rc-head">
                     <h2>여행 계획2</h2>
@@ -119,12 +146,31 @@
                     <p>강원도-경기도-경상도</p>
                 </div>
             </div>
+
             <!--for i in
             <div class="room-card">
                 <h1>생성된 룸</h1>
             </div>
             -->
+        
+            {% for info in infos %}
+           <a href="{% url 'place_select' %}">
+              <div class="room-card">
+                <div class="rc-head">
+                    <h2>{{info.roomname }}</h2>
+                </div>
+                <div class="rc-contents">
+                    <p>{{info.date}}<br>
+                        {{info.mainmember}}</p>
+                    <!-- <p></p> -->
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+
+            
         </div>
     </div>
+    
     
 {% endblock %}

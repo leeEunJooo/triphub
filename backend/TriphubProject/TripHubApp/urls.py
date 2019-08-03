@@ -3,13 +3,14 @@
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from place_select import views as views_place
 
 # django + react api 연동
-from rest_framework import routers
+# from rest_framework import routers
 
-router = routers.DefaultRouter()
-router.register("roominput", views.RoomInputView, "roominput")
-router.register("myroom", views.myRoomView, "myroom")
+# router = routers.DefaultRouter()
+# router.register("roominput", views.RoomInputView, "roominput")
+# router.register("myroom", views.myRoomView, "myroom")
 
 urlpatterns = [
     path("", views.index, name="index"),
@@ -21,6 +22,6 @@ urlpatterns = [
     # 그저 create 함수를 실행시켜주려고 하는 것임.
     
     # django + react api 연동
-    path('api/', include(router.urls)),
+    # path('api/', include(router.urls)),
 ]
 
