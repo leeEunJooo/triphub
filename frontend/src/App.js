@@ -3,6 +3,8 @@ import './App.css';
 import axios from "axios";
 import TextItem from "./TextItem";
 
+import Nav from './components/Nav';
+
 axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFToken"
 
@@ -20,6 +22,8 @@ class App extends Component {
     const { roomList, roomname, mainmember } = this.state;
     return (
       <div className="App">
+        <Nav/>
+        <hr/> {/* Nav-bar구분용 추후에 삭제예정 */}
         <h1> 리액트 연동 테스트 앱 </h1>
         <div>
           <label>
