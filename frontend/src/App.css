@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap'); 
+/* font-family: 'Righteous', cursive; */
+
+.logo-hidden{
+  position: absolute;
+  top: 35%;
+  right: 5%;
+  font-size: 170px;
+  font-family: 'Righteous', cursive;
+  color: rgb(175, 175, 175);
+  opacity: 0.2;
+}
+
 /* .App {
   text-align: center;
 }

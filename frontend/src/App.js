@@ -4,6 +4,7 @@ import axios from "axios";
 import TextItem from "./TextItem";
 
 import Nav from './components/Nav';
+import Loading from './components/Loading';
 
 axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFToken"
@@ -23,7 +24,9 @@ class App extends Component {
     return (
       <div className="App">
         <Nav/>
-        <hr/> {/* Nav-bar구분용 추후에 삭제예정 */}
+        {/* <hr/> Nav-bar구분용 추후에 삭제예정 */}
+        <Loading/>
+        <div className='logo-hidden'>Triphub</div>
         <h1> 리액트 연동 테스트 앱 </h1>
         <div>
           <label>
