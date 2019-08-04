@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
 import axios from "axios";
 import TextItem from "./TextItem";
-
-import Nav from './components/Nav';
-import Loading from './components/Loading';
 
 axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFToken"
 
-class App extends Component {
+class RoomInput extends Component {
   state = {
     roomname: "",
     mainmember: "",
@@ -23,9 +19,6 @@ class App extends Component {
     const { roomList, roomname, mainmember } = this.state;
     return (
       <div className="App">
-        <Nav/>
-        {/* <hr/> Nav-bar구분용 추후에 삭제예정 */}
-        <Loading/>
         <div className='logo-hidden'>Triphub</div>
         <h1> 리액트 연동 테스트 앱 </h1>
         <div>
@@ -94,4 +87,4 @@ class App extends Component {
   };
 }
 
-export default App;
+export default RoomInput;
