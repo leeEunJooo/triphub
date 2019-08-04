@@ -1,10 +1,10 @@
 import React from 'react';
-import Nav from './Nav'
+
 
 const Main = () => {
   return (
     <div>
-      <Nav />
+      Main 페이지
     </div>
   );
 };
