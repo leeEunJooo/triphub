@@ -87,3 +87,12 @@ def main(request):
             # room_mainmember.append(row.mainmember)
             # room_info.append(a)
     return render(request,'main.html', {'infos':info})
+
+# django + react 연동
+class RoomInputView(viewsets.ModelViewSet):
+    serializer_class = RoomInputSerializer
+    queryset = RoomInput.objects.all()
+
+class myRoomView(viewsets.ModelViewSet):
+    serializer_class = myRoomSerializer
+    queryset = myRoom.objects.all()

@@ -10,6 +10,7 @@ from django.core.mail import EmailMessage
 from .tokens import account_activation_token
 from django.utils.encoding import force_bytes, force_text
 from Members.models import memberList
+
 def register(request):
     if request.method == 'POST':
         user_form = RegisterForm(request.POST)

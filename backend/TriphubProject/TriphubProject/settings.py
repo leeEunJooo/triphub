@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'Members',
     'place_select',
     'chat',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -156,7 +157,7 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    os.path.join(BASE_DIR, "frontend", "build"),
+    os.path.join(BASE_DIR, "frontend", "build", 'static'),
 ]
 
 
