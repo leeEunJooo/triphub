@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap'); 
+/* font-family: 'Righteous', cursive; */
+
+.opacity-logo{
+    position: fixed;
+    margin: 20px -350px;
+    font-size: 300px;
+    opacity: 0.1;
+    color: rgb(158, 158, 158);
+    font-family: 'Righteous', cursive;
+    z-index: -2;
+}

@@ -17,10 +17,10 @@ const history = createBrowserHistory();
 ReactDOM.render(
   
   <Router history={history}>
-    <Route exact path='/' component={Main} history={history} />
+    <Route exact path='/' component={Login} history={history} />
     <Route exact path='/regist' component={Register} history={history} />
     <Route path="/attraction" component={FirstSearch} history={history} />
-    <Route path="/login" component={Login} history={history} />
+    <Route path="/main" component={Main} history={history} />
     <Route path="/room" component={RoomInput} history={history} />
 
   </Router>

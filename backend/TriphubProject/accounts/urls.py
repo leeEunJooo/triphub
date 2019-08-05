@@ -5,6 +5,11 @@ from .views import register
 from .views import activate
 # import Rooms.views as room
 
+# from rest_framework import routers
+
+# router = routers.DefaultRouter()
+# router.register("...", views...., "...")
+# router.register("...", views...., "...")
 
 urlpatterns = [
     path('login/', auth_view.LoginView.as_view(), name="login"),

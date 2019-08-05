@@ -5,7 +5,6 @@ import Loading from './Loading';
 const FirstSearch = () => {
   return (
     <div>
-      FirstSearch
       <Loading />
     </div>
   );
